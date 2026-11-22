@@ -1,0 +1,9 @@
+{
+  "app": "创炫音频播放器",
+  "store_id": "9P6T6KDXD16X",
+  "store_url": "https://apps.microsoft.com/detail/9P6T6KDXD16X",
+  "store_deeplink": "ms-windows-store://pdp/?productid=9P6T6KDXD16X",
+  "publish_mode": "Immediate",
+  "version": "1.0.1.0",
+  "package": "msix/创炫音频播放器_1.0.1.0_x64.msix"
+}

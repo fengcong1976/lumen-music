@@ -1,0 +1,23 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+library.json
+vendor/
+build/
+dist/
+installer_output/
+# --- 开源发布忽略规则 ---
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+msix/
+verification/
+.screenshots/
+.workbuddy/
+.trae/
+.cache/
+.diag/
+*.tmp
+.DS_Store
