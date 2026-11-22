@@ -1,0 +1,4 @@
+VLC media player 3.0.21 / libvlc
+libvlc 以 LGPL-2.1-or-later 分发，本应用按 LGPL-3.0 使用；VLC 应用与插件以
+GPL-2.0-or-later 分发，本应用按 GPL-3.0 使用。LGPL-3.0 与 GPL-3.0 全文见同目录。
+项目地址：https://www.videolan.org/vlc/

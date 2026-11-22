@@ -1,7 +1,7 @@
 ﻿; Lumen 音乐 Inno Setup 安装包脚本（per-user 免 UAC，公司规范）
 ; AppVersion 必须与 core/version.py、官网 publish.json 三处一致
 #define AppName "Lumen 音乐"
-#define AppVersion "1.4"
+#define AppVersion "1.5"
 #define AppPublisher "深圳市创炫互动网络科技有限公司"
 #define AppURL "https://www.mrheedu.com"
 #define AppExeName "Lumen音乐.exe"

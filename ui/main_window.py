@@ -346,8 +346,11 @@ class MainWindow(QMainWindow):
         head.setSectionsClickable(True)
         head.setSortIndicatorShown(True)
         head.setStretchLastSection(False)
-        head.setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
+        head.setSectionResizeMode(0, QHeaderView.ResizeMode.Interactive)
         head.resizeSection(0, 52)
+        self._index_width_manual = False
+        self._index_fitting = False
+        head.sectionResized.connect(self._on_section_resized)
         head.setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
         head.setSectionResizeMode(2, QHeaderView.ResizeMode.Fixed)
         head.resizeSection(2, 170)
@@ -852,14 +855,27 @@ class MainWindow(QMainWindow):
         self._fit_index_column()
 
     def _fit_index_column(self) -> None:
-        """序号列按曲目数量的位数自适应，避免上千首后显示成「1...」。"""
+        """序号列按曲目数量的位数自适应；用户手动拖过之后不再自动改。"""
+        if getattr(self, "_index_width_manual", False):
+            return
         rows = max(self.model.rowCount(), 1)
         digits = len(str(rows))
-        width = self.table.fontMetrics().horizontalAdvance("0" * digits) + 26
-        width = max(52, width)
+        width = max(52, self.table.fontMetrics().horizontalAdvance("0" * digits) + 32)
         head = self.table.horizontalHeader()
         if head.sectionSize(0) != width:
+            self._index_fitting = True
             head.resizeSection(0, width)
+            self._index_fitting = False
+
+    def _on_section_resized(self, section: int, old: int, new: int) -> None:
+        """用户拖动表头后记住手动宽度，后续刷新不再覆盖。"""
+        if section == 0 and not getattr(self, "_index_fitting", False):
+            self._index_width_manual = True
+
+    def showEvent(self, event) -> None:
+        super().showEvent(event)
+        # 样式表在显示后才完全生效，这里再按真实字体校准一次。
+        QTimer.singleShot(0, self._fit_index_column)
 
     def _update_header(self) -> None:
         if self._view == self.VIEW_RECENT:
