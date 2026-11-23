@@ -232,3 +232,9 @@ Inno Setup 制作 per-user 免 UAC 安装包（`Lumen音乐.iss`），
 本仓库只包含源码，以下运行时资源体积较大，未纳入仓库：
 
 - vendor/vlc/（VLC 播放内核）：从 videolan.org 下载后按 vendor/vlc 结构放入。
+
+---
+
+## 更多免费软件
+
+本工具由深圳市创炫互动网络科技有限公司开发，官网提供免费安装包、图文教程，以及更多永久免费的 Windows 软件：**[www.mrheedu.com](https://www.mrheedu.com)**
