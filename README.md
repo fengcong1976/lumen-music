@@ -1,5 +1,6 @@
 # Lumen 音乐
 
+> 免费下载与图文教程：<https://www.mrheedu.com/apps/lumen-music>　·　更多免费软件：[www.mrheedu.com](https://www.mrheedu.com)
 一个用 **Python + PySide6（Qt6）** 写的本地音频播放器：干净的界面、同步歌词、四种播放模式、
 按歌名 / 艺术家 / 专辑搜索，以及自定义播放列表。全部数据存在本地，不联网、不上传。
 
